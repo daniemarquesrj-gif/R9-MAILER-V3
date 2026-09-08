@@ -1,0 +1,38 @@
+name: Compilar R9 Mailer com Nuitka
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+    - name: Clonar Repositório
+      uses: actions/checkout@v4
+
+    - name: Configurar Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.13'
+
+    - name: Instalar Dependências
+      run: |
+        python -m pip install --upgrade pip
+        python -m pip install PyQt6 pandas openpyxl lxml beautifulsoup4 premailer pywin32 nuitka zstandard
+
+    - name: Compilar com Nuitka
+      run: |
+        python -m nuitka --standalone --windows-console-mode=disable --assume-yes-for-downloads --enable-plugin=pyqt6 --include-data-dir="assets=assets" --include-data-file="app_style.qss=app_style.qss" --windows-icon-from-ico="icone.ico" app_qt.py
+
+    - name: Compactar Pasta Gerada
+      run: |
+        Compress-Archive -Path "app_qt.dist" -DestinationPath "R9_Mailer_Nuitka.zip"
+
+    - name: Enviar Artefato (Baixar Executável)
+      uses: actions/upload-artifact@v4
+      with:
+        name: R9_Mailer_Final
+        path: R9_Mailer_Nuitka.zip
