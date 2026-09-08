@@ -1,0 +1,572 @@
+/*
+   ============================================================================
+   R9BOT MAIL SENDER - DESIGN SYSTEM GLOBAL
+   ============================================================================
+   Paleta de cores corporativa, tipografia e componentes padronizados
+   Data: 2026-09-01
+   Aplicado a: QApplication (global em toda a janela)
+   ============================================================================
+*/
+
+/* ============================================================================
+   1. CONFIGURAÇÃO BASE (Todos os Widgets)
+   ============================================================================ */
+
+QWidget {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 10pt;
+    color: #666666;
+    background-color: #FFFFFF;
+}
+
+QMainWindow {
+    background-color: #FFFFFF;
+}
+
+/* ============================================================================
+   2. TIPOGRAFIA - CLASSES DE LABELS
+   ============================================================================ */
+
+/* Título Principal - 16pt, Bold, Azul Corporativo */
+QLabel[class="h1"] {
+    font-size: 16pt;
+    font-weight: bold;
+    color: #1E1B4B;
+    background-color: transparent;
+}
+
+/* Subtítulo Principal - 13pt, Bold, Azul Corporativo */
+QLabel[class="h2"] {
+    font-size: 13pt;
+    font-weight: bold;
+    color: #004687;
+    background-color: transparent;
+}
+
+/* Label de Input (Padrão) - 10pt, Bold, Cinzento Escuro */
+QLabel[class="label"] {
+    font-size: 10pt;
+    font-weight: bold;
+    color: #1E1B4B;
+    background-color: transparent;
+}
+
+/* Texto de Dica/Subtítulo - 9pt, Regular, Cinzento */
+QLabel[class="caption"] {
+    font-size: 9pt;
+    font-weight: normal;
+    color: #666666;
+    background-color: transparent;
+}
+
+/* Texto para Status/Contador - 9pt, Regular, Azul */
+QLabel[class="status"] {
+    font-size: 9pt;
+    font-weight: bold;
+    color: #004687;
+    background-color: transparent;
+}
+
+/* Separadores Horizontais - Cor neutra */
+QFrame[frameShape="4"] {
+    color: #D1D5DB;
+    background-color: transparent;
+}
+
+/* ============================================================================
+   3. INPUTS - QLineEdit
+   ============================================================================ */
+
+QLineEdit {
+    padding: 8px 12px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: #1E1B4B;
+    selection-background-color: #F0F5F9;
+    font-size: 10pt;
+}
+
+/* Estado Focus (Selecionado/Digitando) */
+QLineEdit:focus {
+    border: 2px solid #004687;
+    background-color: #FFFFFF;
+    color: #1E1B4B;
+}
+
+/* Estado Desabilitado */
+QLineEdit:disabled {
+    background-color: #F3F4F6;
+    color: #9CA3AF;
+    border: 1px solid #E5E7EB;
+}
+
+/* ============================================================================
+   4. BOTÕES - Sistema de Classes
+   ============================================================================ */
+
+/* Botão Base - Reset de estilos padrão */
+QPushButton {
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    color: white;
+    padding: 10px 20px;
+    font-size: 10pt;
+    background-color: #6C757D;
+    min-width: 80px;
+}
+
+/* Hover geral */
+QPushButton:hover {
+    opacity: 0.9;
+}
+
+/* Pressed geral */
+QPushButton:pressed {
+    opacity: 0.85;
+}
+
+/* Estado Desabilitado */
+QPushButton:disabled {
+    background-color: #D1D5DB;
+    color: #9CA3AF;
+}
+
+/* ============================================================================
+   CLASSE PRIMARY - Botão Principal (Enviar, Ação Crítica)
+   Cor: Verde Sucesso #27AE60
+   Padding: 12px 24px (maior ênfase)
+   Font: 11pt Bold
+   ============================================================================ */
+QPushButton[class="primary"] {
+    background-color: #27AE60;
+    padding: 12px 24px;
+    font-size: 11pt;
+    font-weight: bold;
+    min-width: 120px;
+}
+
+QPushButton[class="primary"]:hover {
+    background-color: #229954;
+}
+
+QPushButton[class="primary"]:pressed {
+    background-color: #1E8449;
+}
+
+/* ============================================================================
+   CLASSE SECONDARY - Botão Secundário (Ações comuns)
+   Cor: Azul Corporativo #004687
+   Padding: 10px 20px (médio)
+   Font: 10pt Bold
+   ============================================================================ */
+QPushButton[class="secondary"] {
+    background-color: #004687;
+    padding: 10px 20px;
+    font-size: 10pt;
+    font-weight: bold;
+    min-width: 100px;
+}
+
+QPushButton[class="secondary"]:hover {
+    background-color: #003260;
+}
+
+QPushButton[class="secondary"]:pressed {
+    background-color: #002147;
+}
+
+/* ============================================================================
+   CLASSE TERTIARY - Botão Terciário (Preview, Ações auxiliares)
+   Cor: Laranja #E67E22
+   Padding: 10px 20px (médio)
+   Font: 10pt
+   ============================================================================ */
+QPushButton[class="tertiary"] {
+    background-color: #E67E22;
+    padding: 10px 20px;
+    font-size: 10pt;
+    font-weight: bold;
+    min-width: 100px;
+}
+
+QPushButton[class="tertiary"]:hover {
+    background-color: #D35400;
+}
+
+QPushButton[class="tertiary"]:pressed {
+    background-color: #B83F0E;
+}
+
+/* ============================================================================
+   CLASSE DANGER - Botão Perigoso (Pausar, Delete, Limpar)
+   Cor: Vermelho #C0392B
+   Padding: 12px 24px (ênfase - não deve ser pressionado por acidente)
+   Font: 11pt Bold
+   ============================================================================ */
+QPushButton[class="danger"] {
+    background-color: #C0392B;
+    padding: 12px 24px;
+    font-size: 11pt;
+    font-weight: bold;
+    min-width: 120px;
+}
+
+QPushButton[class="danger"]:hover {
+    background-color: #A93226;
+}
+
+QPushButton[class="danger"]:pressed {
+    background-color: #922B21;
+}
+
+/* ============================================================================
+   CLASSE GHOST - Botão Fantasma (Resetar, Ações neutras)
+   Cor: Cinzento #6C757D
+   Padding: 10px 20px
+   Font: 10pt
+   ============================================================================ */
+QPushButton[class="ghost"] {
+    background-color: #6C757D;
+    padding: 10px 20px;
+    font-size: 10pt;
+    font-weight: normal;
+    min-width: 100px;
+}
+
+QPushButton[class="ghost"]:hover {
+    background-color: #5A6268;
+}
+
+QPushButton[class="ghost"]:pressed {
+    background-color: #495057;
+}
+
+/* ============================================================================
+   5. TABS - QTabWidget
+   ============================================================================ */
+
+QTabWidget::pane {
+    border: 1px solid #D1D5DB;
+    background-color: #FFFFFF;
+    border-radius: 8px;
+}
+
+QTabBar::tab {
+    background-color: #F3F4F6;
+    color: #666666;
+    padding: 10px 24px;
+    margin-right: 2px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    font-weight: bold;
+    font-size: 10pt;
+    border: 1px solid #E5E7EB;
+    border-bottom: none;
+}
+
+/* Estado Selecionado - Aba Ativa */
+QTabBar::tab:selected {
+    background-color: #004687;
+    color: white;
+    border: 1px solid #004687;
+    border-bottom: 3px solid #004687;
+}
+
+/* Hover - Aba não selecionada */
+QTabBar::tab:hover:!selected {
+    background-color: #F9FAFB;
+    color: #004687;
+}
+
+/* ============================================================================
+   6. TABELAS - QTableWidget
+   ============================================================================ */
+
+QTableWidget {
+    gridline-color: #E5E7EB;
+    background-color: #FFFFFF;
+    alternate-background-color: #F9FAFB;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+}
+
+QTableWidget::item {
+    padding: 6px 8px;
+    border: none;
+    color: #1E1B4B;
+}
+
+/* Linha selecionada */
+QTableWidget::item:selected {
+    background-color: #F0F5F9;
+    color: #004687;
+}
+
+/* Header (Cabeçalho) */
+QHeaderView::section {
+    background-color: #004687;
+    color: white;
+    padding: 8px 6px;
+    border: none;
+    font-weight: bold;
+    font-size: 10pt;
+    height: 32px;
+}
+
+QHeaderView::section:hover {
+    background-color: #003260;
+}
+
+/* Scroll Bar da Tabela */
+QTableWidget::scroll {
+    background-color: #F9FAFB;
+}
+
+/* ============================================================================
+   7. PROGRESS BAR - Barra de Progresso
+   ============================================================================ */
+
+QProgressBar {
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    background-color: #F9FAFB;
+    text-align: center;
+    color: #004687;
+    height: 24px;
+    font-weight: bold;
+    font-size: 10pt;
+}
+
+/* Chunk (Preenchimento) */
+QProgressBar::chunk {
+    background-color: #004687;
+    border-radius: 4px;
+    margin: 1px;
+}
+
+/* Quando indeterminado */
+QProgressBar::chunk:indeterminate {
+    background-color: qlineargradient(x1:0, y1:0, x2:1, y2:0,
+                                      stop:0 #004687,
+                                      stop:50 #F0F5F9,
+                                      stop:100 #004687);
+}
+
+/* ============================================================================
+   8. SCROLL BARS - Barras de Rolagem
+   ============================================================================ */
+
+QScrollBar:vertical {
+    width: 12px;
+    background-color: #F9FAFB;
+    border: none;
+}
+
+QScrollBar::handle:vertical {
+    background-color: #D1D5DB;
+    border-radius: 6px;
+    min-height: 20px;
+}
+
+QScrollBar::handle:vertical:hover {
+    background-color: #9CA3AF;
+}
+
+QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+    border: none;
+    background: none;
+}
+
+QScrollBar:horizontal {
+    height: 12px;
+    background-color: #F9FAFB;
+    border: none;
+}
+
+QScrollBar::handle:horizontal {
+    background-color: #D1D5DB;
+    border-radius: 6px;
+    min-width: 20px;
+}
+
+QScrollBar::handle:horizontal:hover {
+    background-color: #9CA3AF;
+}
+
+QScrollBar::left-arrow:horizontal, QScrollBar::right-arrow:horizontal {
+    border: none;
+    background: none;
+}
+
+/* ============================================================================
+   9. ALERTS/CARDS - Caixas de Informação
+   ============================================================================ */
+
+/* Card Informativo (Azul) */
+QLabel[class="alert-info"] {
+    background-color: #F0F5F9;
+    border-left: 4px solid #004687;
+    border-radius: 4px;
+    padding: 12px 16px;
+    color: #004687;
+    font-size: 10pt;
+}
+
+/* Card Sucesso (Verde) */
+QLabel[class="alert-success"] {
+    background-color: #E8F8F5;
+    border-left: 4px solid #27AE60;
+    border-radius: 4px;
+    padding: 12px 16px;
+    color: #27AE60;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+/* Card Aviso (Âmbar) */
+QLabel[class="alert-warning"] {
+    background-color: #FEF3C7;
+    border-left: 4px solid #F39C12;
+    border-radius: 4px;
+    padding: 12px 16px;
+    color: #92400E;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+/* Card Erro (Vermelho) */
+QLabel[class="alert-error"] {
+    background-color: #FEE2E2;
+    border-left: 4px solid #C0392B;
+    border-radius: 4px;
+    padding: 12px 16px;
+    color: #991B1B;
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+/* ============================================================================
+   10. COMBO BOX E DROPDOWN
+   ============================================================================ */
+
+QComboBox {
+    padding: 8px 12px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: #1E1B4B;
+    selection-background-color: #F0F5F9;
+}
+
+QComboBox:focus {
+    border: 2px solid #004687;
+}
+
+QComboBox:disabled {
+    background-color: #F3F4F6;
+    color: #9CA3AF;
+}
+
+QComboBox::drop-down {
+    border: none;
+    width: 20px;
+}
+
+QComboBox::down-arrow {
+    image: none;
+    width: 0px;
+}
+
+/* ============================================================================
+   11. SPIN BOX E CONTROLES NUMÉRICOS
+   ============================================================================ */
+
+QSpinBox, QDoubleSpinBox {
+    padding: 8px 12px;
+    border: 1px solid #D1D5DB;
+    border-radius: 6px;
+    background-color: #FFFFFF;
+    color: #1E1B4B;
+}
+
+QSpinBox:focus, QDoubleSpinBox:focus {
+    border: 2px solid #004687;
+}
+
+QSpinBox:disabled, QDoubleSpinBox:disabled {
+    background-color: #F3F4F6;
+    color: #9CA3AF;
+}
+
+/* ============================================================================
+   12. CHECK BOX E RADIO BUTTON
+   ============================================================================ */
+
+QCheckBox, QRadioButton {
+    color: #1E1B4B;
+    spacing: 6px;
+    font-size: 10pt;
+}
+
+QCheckBox::indicator, QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+}
+
+QCheckBox::indicator:checked, QRadioButton::indicator:checked {
+    background-color: #004687;
+    border: 2px solid #004687;
+    border-radius: 3px;
+}
+
+QCheckBox::indicator:unchecked, QRadioButton::indicator:unchecked {
+    background-color: #FFFFFF;
+    border: 2px solid #D1D5DB;
+    border-radius: 3px;
+}
+
+/* ============================================================================
+   13. DIALOG E MESSAGE BOX
+   ============================================================================ */
+
+QDialog {
+    background-color: #FFFFFF;
+}
+
+QMessageBox {
+    background-color: #FFFFFF;
+}
+
+QMessageBox QLabel {
+    color: #1E1B4B;
+}
+
+/* ============================================================================
+   PALETA DE CORES DE REFERÊNCIA (Comentários)
+   ============================================================================
+   
+   🎨 CORES PRIMÁRIAS:
+      Azul Corporativo:     #004687  (destaque, headers, tabs ativas)
+      Azul Claro:           #F0F5F9  (backgrounds suaves, hover)
+   
+   🎨 CORES FUNCIONAIS:
+      Verde Sucesso:        #27AE60  (enviar, OK, ativo)
+      Laranja Ação:         #E67E22  (preview, secundário)
+      Vermelho Perigo:      #C0392B  (pausar, delete)
+      Âmbar Aviso:          #F39C12  (warnings)
+      Cinzento Neutro:      #6C757D  (secundário, disabled)
+   
+   🎨 CORES NEUTRAS:
+      Texto Principal:      #1E1B4B  (muito escuro, legível)
+      Texto Secundário:     #666666  (subtítulos)
+      Texto Disabled:       #9CA3AF  (desabilitado)
+      Border:               #D1D5DB  (bordas padrão)
+      Background:           #FFFFFF  (fundo branco)
+      Background Subtle:    #F9FAFB  (fundo leve alternado)
+      Background Gray:      #F3F4F6  (inputs disabled)
+      Border Light:         #E5E7EB  (bordas leves)
+   
+   ============================================================================
+*/
